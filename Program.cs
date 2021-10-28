@@ -35,26 +35,7 @@ namespace Lab03
                     }
                 }
 
-                if (number % 2 != 0)
-                {
-                    Console.WriteLine($"{number} and Odd.");
-                }
-                else if (number % 2 == 0 && number >= 2 && number <= 25)
-                {
-                    Console.WriteLine($"Even and less than 25.");
-                }
-                else if (number % 2 == 0 && number >= 26 && number <= 60)
-                {
-                    Console.WriteLine($"Even.");
-                }
-                else if (number % 2 == 0 && number >= 60)
-                {
-                    Console.WriteLine($"{number} and Even.");
-                }
-                else if (number % 2 != 0 && number >= 60)
-                {
-                    Console.WriteLine($"{number} and Odd.");
-                }
+                Console.WriteLine(NumberSorter(number));
 
                 bool isValidYesNo = false;
                 do // loop while getting a valid playAgain input
@@ -80,6 +61,34 @@ namespace Lab03
 
             Console.WriteLine($"Thanks for playing, {userName}! Press any key to exit.");
             Console.ReadKey();
+        }
+
+        public static string NumberSorter(int number)
+        {
+            if (number % 2 != 0)
+            {
+                return $"{number} and Odd.";
+            }
+            else if (number % 2 == 0 && number >= 2 && number <= 25)
+            {
+                return $"Even and less than 25.";
+            }
+            else if (number % 2 == 0 && number >= 26 && number <= 60)
+            {
+                return $"Even.";
+            }
+            else if (number % 2 == 0 && number >= 60)
+            {
+                return $"{number} and Even.";
+            }
+            else if (number % 2 != 0 && number >= 60)
+            {
+                return $"{number} and Odd.";
+            }
+            else
+            {
+                return "Error.";
+            }
         }
     }
 }
